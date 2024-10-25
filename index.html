@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        #countdown {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            color: #e44d26;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #e44d26;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+
+        #message {
+            display: none;
+            font-size: 1.5em;
+            color: #e44d26;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #introMessage {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #stayTuned {
+            font-size: 1em;
+            color: #555;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="introMessage">🎉 Advance Happy Birthday! 🎉<br>Get ready to celebrate a special day soon!</div>
+    <div id="countdown"><span id="timer"></span></div>
+    <div id="stayTuned">Stay tuned until the timeline hits zero for more exciting content!</div>
+    <div id="message" onclick="redirectToAnotherPage()">It's time! Your special content is here.</div>
+
+    <script>
+        // Set the target date and time for testing (10 seconds from now)
+         const targetDate = new Date(new Date().getTime() + 10 * 1000).getTime(); // Change to your desired time for real use
+        // const targetDate = new Date('November 22, 2024 00:00:00').getTime();
+        // Update the countdown every second
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('timer').innerHTML = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+
+            // When the countdown is over, display the message and redirect
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').style.display = 'none';
+                document.getElementById('stayTuned').style.display = 'none';
+                document.getElementById('message').style.display = 'block';
+                redirectToAnotherPage(); // Automatically redirect when time is up
+            }
+        }, 1000); // Update every second
+
+        // Redirect to another page after countdown ends
+        function redirectToAnotherPage() {
+            window.location.href = 'hbd.html'; // Replace with your desired URL
+        }
+    </script>
+</body>
+</html>

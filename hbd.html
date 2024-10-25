@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #left-side {
+            flex: 1;
+            text-align: center;
+            padding: 0px 20px;
+        }
+
+        #right-side {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+
+        #birthday-heading {
+            font-size: 2em;
+            color: #e44d26;
+            margin-bottom: 10px;
+        }
+
+        #cake-container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        #cake {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+      
+
+        #cake-front, #cake-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+        }
+
+        #cake-front {
+            z-index: 2;
+        }
+
+        #cake-back {
+            transform: rotateY(180deg);
+            background-color: #e44d26; /* Add a background color to differentiate from the front image */
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        #birthday-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+        }
+
+        #birthday-wishes {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        #birthday-wishes p {
+            margin-bottom: 10px;
+        }
+        /* Styling for the button */
+        #letterButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #letterButton:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the password field */
+        #passwordField {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Styling for the letter display */
+        #letter {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 500px;
+            max-height: 400px;
+            overflow-y: auto;
+            text-align: left;
+            white-space: pre-wrap;
+            /* Preserves line breaks and spacing */
+        }
+
+        /* Styling for the close button inside the letter */
+        .closeButton {
+            display: block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            width: 100px;
+        }
+
+        .closeButton:hover {
+            background-color: #c9302c;
+        }
+
+        /* Container to center the elements */
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="left-side">
+            <h1 id="birthday-heading">Happy Birthday!</h1>
+            <div id="cake-container">
+                <div id="cake-front">
+                    <img id="cake" src="./pic1.jpeg" alt="Birthday Cake Front">
+                </div>
+                
+            </div>
+        </div>
+        
+        <div id="right-side">
+            <div id="birthday-wishes">
+                <p>Wishing you a day filled with joy, laughter, and wonderful moments! May this year bring you closer to your dreams and bring you endless happiness.</p>
+                <p>On your special day, I hope you feel surrounded by love and warmth. Cheers to another fantastic year of adventures and accomplishments!</p>
+            </div>
+        </div>
+    </div>
+
+    <p id="birthday-message">Wishing you a fantastic day filled with joy and laughter!</p>
+    <div class="container">
+        <button id="letterButton">Letter</button>
+        <input type="password" id="passwordField" placeholder="Enter password">
+        <div id="letter">
+            hi! suriya<br>
+            e letter enti anukuntunnava? em le something edho okati surprise ivvali ga? but nik thelusu naa dhaggara memories ga konni pics kuda dhachukolenu. but aaa memories aitheee marchipoledhu. avi neetho share cheskundham ani e letter.<br>
+
+            first time manam kalisina bus stop nunchi last time kalisina bus(hyd return) varaku manaki unna konni memories. mana journey mottham cheppali anteletter ani kadhu oka dairy ani cheppali. so, simple ga short and sweet ga places cheptha. aaaa place ki eppudu vellam anedhi nuv gurthuchesko okay na. em ainaaa marchipoyi unte gurthuchey tharvathaa ok.<br>
+            bus stop lo parichayam ala maaa class ki thiskochindhi next canteen ki next bus lopala tharvatha naa scooty after that all change ala thalluru, peddhapuram colours, movies and kakinada beach, rajamandry resturent, jaladhara waterfalls, anaparthi resturent, dwarapudi temples,riverbay , mee shop , maaa house jaya house korangi, vizag beach, vizag vellinappudu bus kosam kastalu mee frnd thiskraavatam edho vichithram ga undhi.evening train meedha return raavatam. somalkota bus complex and yathi resturent,maaa company meeting and pyramid resturent and finally nuv anukunnatugga first time going to hyd neetho. akkada konni places neetho visit chesinavi metro, chutny, charminar, dmart, trends, swamming, nyt tea final ga bus. ammo just places ke intha aitheee motthaniki njm ga dairylu avthayi emo. rey inkoka place still manam meet aiyyedhi marchipoya enti adhi? aaalochinchaku nene cheptha mana inti paina nuv akkada nen ikkada. edhi final ga memories anni nee dhaggara pettuko nen gaaalilo cheptha ippudu cheppinattu.first time oka person tho inni memories create cheskotam edheee. final ga okati ra enni times nen enni maaatalu anna ardham cheskoni still naatho unnandhuku thank you.
+            <br>
+            nak thelusu nen anna maaathalu ela untayo but ala anna sare nuv maaaravu ra pandhi. nuv maaaraku ala ne undu nen ala ne anta. mundhe chepthunna inka inka chala anta vodhili poyavooo mokam pachadi chestha pappu. chalu le letter chala peddhadhi avthundhi.<br>
+            once again many more happy returns of the day raaa, njoy your day!<br>
+
+            <button class="closeButton" onclick="closeLetter()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const letterButton = document.getElementById("letterButton");
+        const passwordField = document.getElementById("passwordField");
+        const letter = document.getElementById("letter");
+
+        const correctPassword = "c458";  // Replace with your desired password
+
+        letterButton.addEventListener("click", () => {
+            passwordField.style.display = "block";
+            passwordField.focus();
+        });
+
+        passwordField.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                if (passwordField.value === correctPassword) {
+                    letter.style.display = "block";
+                    passwordField.style.display = "none";
+                } else {
+                    alert("Incorrect password!");
+                }
+                passwordField.value = "";  // Clear the password field
+            }
+        });
+
+        // Function to close the letter
+        function closeLetter() {
+            letter.style.display = "none";
+        }
+    </script>
+</body>
+</html>
